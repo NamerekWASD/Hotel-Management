@@ -163,8 +163,9 @@ namespace BLL.Services
                 while (FakeArrival.CompareTo(FakeDeparture) < 0)
                 {
                     if (d.Time.Date.CompareTo(FakeArrival.Date) == 0)
-                        throw new AlreadyBookedItemException($"Rooms \"{HotelRoomName}\" are not aviable for {d.Time.Day}.{d.Time.Month}.{d.Time.Year}");
-                    /*Console.WriteLine($"Rooms \"{HotelRoomName}\" are not aviable for {d.Time.Day}.{d.Time.Month}.{d.Time.Year}");*/
+                        throw new AlreadyBookedItemException($"Rooms \"{HotelRoomName}\" " +
+                            $"are not aviable for {d.Time.Day}.{d.Time.Month}.{d.Time.Year}");
+                    
                     FakeArrival = FakeArrival.AddDays(1);
                 }
             }
