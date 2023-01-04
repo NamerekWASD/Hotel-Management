@@ -17,6 +17,9 @@
   margin-right: auto;
   margin-left: auto;
 }
+.container{
+    margin-bottom: 60px;
+}
 
 @media (min-width: 576px) {
   .container-sm, .container {

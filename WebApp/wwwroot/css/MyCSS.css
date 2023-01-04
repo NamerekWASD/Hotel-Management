@@ -26,11 +26,13 @@
         }
 
 .filter-box {
-    margin-top: 12px;
+    margin: 12px;
     width: 272px;
     min-height: 1px;
     position: relative;
     padding: 0 15px 0 15px;
+    border: 3px 4px solid;
+    box-shadow: black 3px 3px 15px;
 }
 .hyperlink-continer {
     display: flex;
@@ -82,13 +84,20 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.card {
-    display:flex;
+.card-vertical {
+    display: flex;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 300px;
     height: 500px;
     margin: 12px 20px 12px 20px;
     font-family: arial;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
 }
 
 .card-vertical-body {
@@ -100,7 +109,6 @@
     -webkit-box-pack: end;
     flex-shrink: 0;
 }
-
 .card-body-price {
     display: block;
     font-size: 24px;
@@ -115,7 +123,7 @@
     padding: 0 12px 12px 12px;
     flex-direction: column;
 }
-.card img {
+.card-vertical img {
     width: 300px;
     height: 250px;
 }
@@ -149,7 +157,7 @@
     -webkit-box-flex: 1;
     flex-grow: 1;
     padding: 12px;
-    width: 100%;
+    max-width: 100%;
 }
 .card-body-right {
     display: flex;
@@ -157,12 +165,11 @@
     -webkit-box-direction: normal;
     flex-direction: column;
     -webkit-box-pack: end;
-    padding-top: 86px;
+    padding-top: 100px;
     flex-shrink: 0;
-    width: 186px;
+    max-width: 100%;
 }
     .card-body-right a {
-        border: none;
         outline: 0;
         padding: 12px;
         margin-top: auto;
@@ -170,7 +177,7 @@
         background-color: #000;
         text-align: center;
         cursor: pointer;
-        width: 100%;
+        max-width: 100%;
         font-size: 18px;
         text-decoration: none;
         transition: 0.4s;
@@ -197,11 +204,13 @@
     margin-bottom: 0.75rem;
 }
 .filter-container {
-    border: 1px solid gray;
+    border-bottom: 3px solid black;
     display: flex;
     width: 100%;
     padding-top: 12px;
     padding-bottom: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .filter-button-apply {
     width: -webkit-fill-available;
@@ -222,14 +231,16 @@
     box-sizing: border-box;
     border-radius: 3px;
     background-color: gainsboro;
+    margin:
 }
 
 #searchinput {
     width: -webkit-fill-available;
     font-size: 16px;
     padding: 12px;
-    border: 1px solid #ddd;
-    margin: 12px;
+    border: 1px solid;
+    border-radius:4px;
+    
 }
 
 a {
@@ -243,11 +254,11 @@ a {
 }
 
     .card-img-link img {
+        position: relative;
         box-shadow: 0 0 2px black;
         margin-top: auto;
         margin-bottom: auto;
-        margin-right: 7px;
-        width: 300px;
+        aspect-ratio: 4/3;
         height: 250px;
         transition: all .2s ease-in-out;
     }
@@ -611,4 +622,18 @@ a {
 .select-room select{
     width: 100%;
     padding: 8px;
+}
+
+@media (max-width: 1000px) {
+    .card-horizontal {
+        flex-direction: column;
+        height: fit-content;
+        max-width: 100%;
+    }
+
+    .card-img-link img {
+        height: 100%;
+        width: 100%;
+        margin-right: 0px;
+    }
 }

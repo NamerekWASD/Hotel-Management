@@ -12,7 +12,7 @@ using WebApp.Ninject;
 
 namespace WebApp.Controllers
 {
-    [Authorize(Roles = "Administrator,Manager")]
+    [Authorize(Roles = "Administrator, Manager")]
     public class ManagerController : Controller
     {
         private readonly ITourService _tourService;

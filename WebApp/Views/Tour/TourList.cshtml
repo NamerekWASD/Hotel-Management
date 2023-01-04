@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Tours";
 }
+
 <style>
 label {
     font: 1rem 'Fira Sans', sans-serif;
@@ -23,64 +24,15 @@ label input{
     border-radius: 3px;
 }
 </style>
-<h1 class="text-center">Tour list</h1>
 
-    <div class="search-filter">
-        <form asp-controller="Tour" asp-action="TourList"  method="get">
-            <input type="text" asp-for="SearchString" id="searchinput" autocomplete="off" placeholder="Search..."/>
-        </form>
-    </div>
-<div style="display:flex;">
-    <form asp-controller="Tour" asp-action="TourList"  method="get">
-        <div class="filter-box">
-           <div class="filter-container">
-                    <label><strong>Tour type:</strong>
-                        <select asp-for="TourType" asp-items="Model.Types">
-                            <option value="">All</option>
-                        </select>
-                    </label>
-           </div>
-           <div class="filter-container">
-                    <label><strong>Tour country:</strong>
-                        <select asp-for="TourCountry" asp-items="Model.Arrive">
-                            <option value="">All</option>
-                        </select>
-                    </label>
-           </div>
-           <div class="filter-container">
-                    <label><strong>Tour departure point:</strong>
-                        <select asp-for="TourDeparturePoint" asp-items="Model.DeparturePoint">
-                            <option value="">All</option>
-                        </select>
-                    </label>
-           </div>
-           <div class="filter-container">
-                    <label><strong>Order by:</strong>
-                        <select asp-for="OrderBy">
-                            <option value="0">Default</option>
-                            <option value="1">From cheap to expensive</option>
-                            <option value="2">From expensive to cheap</option>
-                            <option value="3">Start date tour</option>
-                            <option value="4">From short to long</option>
-                            <option value="5">From long to short</option>
-                        </select>
-                    </label>
-           </div>
-            <div class="filter-container">
-                    <label><strong style="margin: 0 6px 0 6px;">Price range:</strong>
-                        <input type="number" asp-for="MinTourPrice" placeholder="@Model.MinTourPrice" step="0,01"/>
-                        <input type="number" asp-for="MaxTourPrice" placeholder="@Model.MaxTourPrice" step="0,01" />
-                    </label>
-            </div>
-            <div class="filter-container">
-                    <label><strong style="margin: 0 6px 0 6px;">Duration range:</strong>
-                        <input type="number" asp-for="MinTourDuration" placeholder="@Model.MinTourDuration"/>
-                        <input type="number" asp-for="MaxTourDuration" placeholder="@Model.MaxTourDuration" />
-                    </label>
-            </div>
-            <input type="submit" value="Apply" class="filter-button-apply"/>
-        </div>
+<h1 class="text-center">Tour list</h1>
+<div class="search-filter">
+    <form asp-controller="Tour" asp-action="TourList" method="get">
+        <input type="text" asp-for="SearchString" id="searchinput" autocomplete="off" placeholder="Search..." />
     </form>
+</div>
+<div style="display:flex;">
+    
     <div style="width: -webkit-fill-available">
         @foreach (var item in Model.TourList) 
         {
@@ -102,5 +54,63 @@ label input{
             </div>
         }
     </div>
+
+    <form asp-controller="Tour" asp-action="TourList" method="get">
+        <div class="filter-box">
+            <div></div>
+            <div class="filter-container">
+                <label claas="filter-label">
+                    <strong>Tour type:</strong>
+                    <select asp-for="TourType" asp-items="Model.Types">
+                        <option value="">All</option>
+                    </select>
+                </label>
+            </div>
+            <div class="filter-container">
+                <label>
+                    <strong>Tour country:</strong>
+                    <select asp-for="TourCountry" asp-items="Model.Arrive">
+                        <option value="">All</option>
+                    </select>
+                </label>
+            </div>
+            <div class="filter-container">
+                <label>
+                    <strong>Tour departure point:</strong>
+                    <select asp-for="TourDeparturePoint" asp-items="Model.DeparturePoint">
+                        <option value="">All</option>
+                    </select>
+                </label>
+            </div>
+            <div class="filter-container">
+                <label>
+                    <strong>Order by:</strong>
+                    <select asp-for="OrderBy">
+                        <option value="0">Default</option>
+                        <option value="1">From cheap to expensive</option>
+                        <option value="2">From expensive to cheap</option>
+                        <option value="3">Start date tour</option>
+                        <option value="4">From short to long</option>
+                        <option value="5">From long to short</option>
+                    </select>
+                </label>
+            </div>
+            <div class="filter-container">
+                <label>
+                    <strong style="margin: 0 6px 0 6px;">Price range:</strong>
+                    <input type="number" asp-for="MinTourPrice" placeholder="@Model.MinTourPrice" step="0,01" />
+                    <input type="number" asp-for="MaxTourPrice" placeholder="@Model.MaxTourPrice" step="0,01" />
+                </label>
+            </div>
+            <div class="filter-container">
+                <label>
+                    <strong style="margin: 0 6px 0 6px;">Duration range:</strong>
+                    <input type="number" asp-for="MinTourDuration" placeholder="@Model.MinTourDuration" />
+                    <input type="number" asp-for="MaxTourDuration" placeholder="@Model.MaxTourDuration" />
+                </label>
+            </div>
+            <input type="submit" value="Apply" class="filter-button-apply" />
+        </div>
+    </form>
 </div>
 

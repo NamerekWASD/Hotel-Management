@@ -4,11 +4,10 @@
 	ViewData["Title"] = "Home Page";
 }
 
-<h2 class="text-center">Hot Tours</h2>
 <div class="hot-offers-container">
 	@foreach(var item in Model.Tours)
 	{
-		<div class="card">
+		<div class="card-vertical">
 			<a asp-controller="Tour" asp-action="Details" asp-route-id="@item.Id" >
 				@if(item.Hotel.Images == null || !item.Hotel.Images.Any()){
 					<img src="~/Files/NoImg.png">

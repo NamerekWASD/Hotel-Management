@@ -33,13 +33,13 @@
             </div>
         </nav>
     </header>
-    <div class="container container-body">
+    <div class="container" style="margin-bottom: 60px">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted" style="max-height:60px">
+    <footer class="border-top footer text-muted" style="position: fixed; background-color: white">
         <div class="container">
             &copy; 2022 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             <a asp-area="" asp-controller="Manager" asp-action="Index">Manage</a>

@@ -28,6 +28,7 @@ namespace WebApp.Controllers
             _signInManager = signInManager;
             _userManager = userManager;
         }
+        [HttpGet]
         public async Task<IActionResult> BookingOnline(int id)
         {
             var tour = await _tourService.GetTourAsync(id);
@@ -64,7 +65,6 @@ namespace WebApp.Controllers
         {
             try
             {
-
                 Tools.Mapper.Map<BillModel>(await _userService
                     .BuildBillAsync(booking.CustomerWhoBook.Id,
                     Tools.Mapper.Map<List<CustomerDTO>>(booking.AdditionalTourist),
