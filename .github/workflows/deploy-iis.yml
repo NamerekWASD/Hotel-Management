@@ -1,0 +1,34 @@
+name: .NET Core Deploy to IIS
+
+on:
+
+  workflow_dispatch:
+
+jobs: 
+  build-and-deploy:
+
+    runs-on: self-hosted
+
+    steps: 
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1 
+        with:
+        dotnet-version: '6.0.x'
+
+    # dotnet build and publish
+
+      - name: Build with dotnet
+        shell: cmd 
+        run: dotnet build -configuration Release
+
+      - name: dotnet publish
+        shell: cmd
+        run: 1 dotnet publish -c Release -o .\myapp
+      - name: Deploy to IIS
+      shell: cmd
+      run: 
+        iisreset /stop
+        xcopy /s /y .\myapp\* C:\www\tour-managment.com
+        iisreset /start

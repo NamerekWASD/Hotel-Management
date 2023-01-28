@@ -31,9 +31,7 @@ namespace UnitsOfWork
         private IRepository<Transport> _transports;
         private IRepository<TransportPlace> _transportPlaces;
 
-        private IRepository<TransportPlace> _transportsplases;
         private IRepository<Customer> _customers;
-        private IRepository<Tour> _orderedtours;
         private IRepository<HotelRoomReservation> _hotelsroomsreservations;
         private IRepository<Bill> _bills;
         public IRepository<Image> Images
