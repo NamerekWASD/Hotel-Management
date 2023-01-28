@@ -293,8 +293,8 @@ namespace LogicTests
             await UserLogic.BuildBillAsync(1,
                 null, 0, 1,
                 "ULTRACLASS",
-                DateTimeOffset.Parse("21.12.2018"),
-                DateTimeOffset.Parse("25.12.2018"));
+                new DateTime(2018, 12, 21),
+                new DateTime(2018, 12, 25));
 
             var Bills = await UserLogic.GetBillsAsync(1);
 
@@ -306,8 +306,8 @@ namespace LogicTests
             Assert.IsTrue(Bills[0].RoomReservation.HotelStars == 3);
             Assert.IsTrue(Bills[0].RoomReservation.ClientName == "Niko");
             Assert.IsTrue(Bills[0].RoomReservation.ClientSurname == "Tym");
-            Assert.IsTrue(Bills[0].RoomReservation.ArrivalDate.CompareTo(DateTimeOffset.Parse("21.12.2018")) == 0);
-            Assert.IsTrue(Bills[0].RoomReservation.DepartureDate.CompareTo(DateTimeOffset.Parse("25.12.2018")) == 0);
+            Assert.IsTrue(Bills[0].RoomReservation.ArrivalDate.CompareTo(new DateTime(2018, 12, 21)) == 0);
+            Assert.IsTrue(Bills[0].RoomReservation.DepartureDate.CompareTo(new DateTime(2018, 12, 25)) == 0);
 
             var HotelRoom = (await UoW.Object.HotelsRooms.GetAllAsync()).FirstOrDefault();
 
@@ -319,15 +319,15 @@ namespace LogicTests
                 await UserLogic.BuildBillAsync(1,
                     new(), 0, 1,
                     "ULTRACLASS",
-                    DateTimeOffset.Parse("21.12.2018"),
-                    DateTimeOffset.Parse("25.12.2018"));
+					new DateTime(2018, 12, 21),
+					new DateTime(2018, 12, 25));
             });
 
             await UserLogic.BuildBillAsync(1,
                      new(), 0, 1,
                      "ULTRACLASS",
-                     DateTimeOffset.Parse("25.12.2018"),
-                     DateTimeOffset.Parse("28.12.2018"));
+					 new DateTime(2018, 12, 25),
+					 new DateTime(2018, 12, 28));
 
             Bills = await UserLogic.GetBillsAsync(1);
 
@@ -340,8 +340,8 @@ namespace LogicTests
             Assert.IsTrue(Bills[1].RoomReservation.HotelStars == 3);
             Assert.IsTrue(Bills[1].RoomReservation.ClientName == "Niko");
             Assert.IsTrue(Bills[1].RoomReservation.ClientSurname == "Tym");
-            Assert.IsTrue(Bills[1].RoomReservation.ArrivalDate.CompareTo(DateTimeOffset.Parse("25.12.2018")) == 0);
-            Assert.IsTrue(Bills[1].RoomReservation.DepartureDate.CompareTo(DateTimeOffset.Parse("28.12.2018")) == 0);
+            Assert.IsTrue(Bills[1].RoomReservation.ArrivalDate.CompareTo(new DateTime(2018, 12, 25)) == 0);
+            Assert.IsTrue(Bills[1].RoomReservation.DepartureDate.CompareTo(new DateTime(2018, 12, 28)) == 0);
 
             HotelRoom = (await UoW.Object.HotelsRooms.GetAllAsync()).FirstOrDefault();
 
@@ -355,8 +355,8 @@ namespace LogicTests
                 await UserLogic.BuildBillAsync((await UserLogic.GetUserAsync(1)).Id,
                     new(), 0, 1,
                     "ULTRACLASS",
-                    DateTimeOffset.Parse("26.12.2018"),
-                    DateTimeOffset.Parse("28.12.2018"));
+					new DateTime(2018, 12, 26),
+					new DateTime(2018, 12, 28));
             });
         }
 
