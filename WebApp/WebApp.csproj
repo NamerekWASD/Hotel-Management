@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-WebApp-C4EC3B35-2543-490B-9097-0200E3ECF3DA</UserSecretsId>
+	<IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

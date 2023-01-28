@@ -10,14 +10,14 @@ namespace DAL
 {
     public class UsageDbContext : IdentityDbContext<Customer, Role, int>
     {
-        public UsageDbContext()
-               : base()
-        {
+#pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
+		public UsageDbContext() : base()
+		{
             Database.EnsureCreated();
         }
-        public UsageDbContext(DbContextOptions<UsageDbContext> options)
-               : base(options)
-        {
+#pragma warning disable CS8618 // Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Возможно, стоит объявить поле как допускающее значения NULL.
+        public UsageDbContext(DbContextOptions<UsageDbContext> options) : base(options)
+		{
             Database.EnsureCreated();
         }
 
@@ -79,7 +79,7 @@ namespace DAL
                 .HasOne(c => c.CustomerWhoBook)
                 .WithMany(p => p.Bills)
                 .HasForeignKey(p => p.CustomerWhoBookId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
 
             base.OnModelCreating(modelBuilder);
