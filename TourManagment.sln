@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{C2661915-2863-4675-A24A-1E24E3945D28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TourManagment", "HotelManagmentFormsApplication\Hotel Management.csproj", "{62826D87-5F5B-4B96-905E-F9D412CF561D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{68EA869D-800C-4737-8B64-B9C7D5F40C48}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitsOfWork", "UnitsOfWork\UnitsOfWork.csproj", "{3C940202-B282-4465-AD18-85D1649497D9}"
@@ -57,10 +55,6 @@ Global
 		{C2661915-2863-4675-A24A-1E24E3945D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2661915-2863-4675-A24A-1E24E3945D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2661915-2863-4675-A24A-1E24E3945D28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62826D87-5F5B-4B96-905E-F9D412CF561D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62826D87-5F5B-4B96-905E-F9D412CF561D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62826D87-5F5B-4B96-905E-F9D412CF561D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62826D87-5F5B-4B96-905E-F9D412CF561D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68EA869D-800C-4737-8B64-B9C7D5F40C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68EA869D-800C-4737-8B64-B9C7D5F40C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68EA869D-800C-4737-8B64-B9C7D5F40C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
