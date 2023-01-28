@@ -13,14 +13,12 @@ namespace DAL
         public UsageDbContext()
                : base()
         {
-            /*Database.EnsureDeleted();
-            Database.EnsureCreated();*/
+            Database.EnsureCreated();
         }
         public UsageDbContext(DbContextOptions<UsageDbContext> options)
                : base(options)
         {
-            /*Database.EnsureDeleted();
-            Database.EnsureCreated();*/
+            Database.EnsureCreated();
         }
 
         public DbSet<HotelRoomReservation> HotelRoomReservations { get; set; }
